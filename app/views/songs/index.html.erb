@@ -5,3 +5,12 @@
 </ul>
 <br>
 <%= link_to "Add New Song", new_song_path %>
+
+
+<ul>
+<% @songs.each do |song| %>
+  <li><%= link_to song.title, song_path(song) %></li>
+  <li><%= display_artist song %> - <%= link_to song.title, song_path(song) %></li>
+<% end %>
+</ul>
+<br>
